@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esta página te ayudará a saber qué tan raro eres según tus rasgos físicos" />
+    <meta name="author" content="Sara Oliva" />
+    <meta name="copyright" content="Sara Oliva 2026" />
+
+    <title>RareScore</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>RareScore</h1>
+        <p>Descubre qué tan raros son tus rasgos físicos.</p>
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h2>
+                ¿Alguna vez te has preguntado qué tan único eres?
+            </h2>
+
+            <p>
+                Descubre la rareza de tus rasgos físicos comparándolos con los de millones de personas en todo el mundo.
+            </p>
+
+            <a href="#rarezaForm" class="hero-btn">
+                Descúbrelo ahora
+            </a>
+
+        </div>
+
+        <div class="hero-icons">
+
+            <div class="trait-card">👁️ Ojos</div>
+            <div class="trait-card">🦱 Cabello</div>
+            <div class="trait-card">🩸 Sangre</div>
+            <div class="trait-card">🖐️ Dominancia</div>
+
+        </div>
+    
+    </section>
+
+    <section class="como-funciona">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p class="intro">
+            RareScore compara tus características físicas con estadísticas
+            de población para estimar qué tan inusual es tu combinación de rasgos.
+        </p>
+
+        <div class="info-box">
+
+            <p>
+                👶 Selecciona siempre los <strong>rasgos con los que naciste</strong>.
+            </p>
+
+            <p>
+                🎨 Si te tiñes el pelo, indica tu color natural.
+            </p>
+
+            <p>
+                👁️ Si usas lentillas de colores, indica tu color real de ojos.
+            </p>
+
+            <p>
+                🧬 Cuanto menos frecuentes sean tus rasgos, mayor será tu puntuación de rareza.
+            </p>
+
+        </div>
+
+        <p class="gancho">
+            Quizá compartas algunos rasgos con millones de personas...
+            <br>
+            <strong>O quizá seas una auténtica excepción estadística. ✨</strong>
+        </p>
+
+    </section>
+
+    <main>
+
+        <section class="form-container">
+
+            <h2>¿Cómo eres?</h2>
+
+            <form id="rarezaForm">
+
+                <!-- Color de ojos -->
+                <div class="question">
+                    <label for="colorOjos">Color de ojos</label>
+                    <select id="colorOjos" name="ojos">
+                        <option value="">Escoge una opción</option>
+                        <option value="marrones">Marrones</option>
+                        <option value="azules">Azules</option>
+                        <option value="verdes">Verdes</option>
+                        <option value="grises">Grises</option>
+                        <option value="ambar">Ámbar</option>
+                    </select>
+                </div>
+
+                <!-- Color de pelo -->
+                <div class="question">
+                    <label for="pelo">Color de pelo</label>
+                    <select id="pelo" name="pelo">
+                        <option value="">Escoge una opción</option>
+                        <option value="negro">Negro</option>
+                        <option value="castano">Castaño</option>
+                        <option value="rubio">Rubio</option>
+                        <option value="pelirrojo">Pelirrojo</option>
+                    </select>
+                </div>
+
+                <!-- Tipo de pelo -->
+                <div class="question">
+                    <label for="cabello">Tipo de pelo</label>
+                    <select id="cabello" name="cabello">
+                        <option value="">Escoge una opción</option>
+                        <option value="liso">Liso</option>
+                        <option value="ondulado">Ondulado</option>
+                        <option value="rizado">Rizado</option>
+                        <option value="afro">Muy rizado</option>
+                    </select>
+                </div>
+
+                <!-- Mano dominante -->
+                <div class="question">
+                    <label for="mano">Mano dominante</label>
+                    <select id="mano" name="mano">
+                        <option value="">Escoge una opción</option>
+                        <option value="diestra">Diestra</option>
+                        <option value="zurda">Zurda</option>
+                        <option value="ambidiestra">Ambidiestra</option>
+                    </select>
+                </div>
+
+                <!-- Hoyuelos -->
+                <div class="question">
+                    <label for="hoyuelos">¿Tienes hoyuelos?</label>
+                    <select id="hoyuelos" name="hoyuelos">
+                        <option value="">Escoge una opción</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <!-- Grupo sanguíneo -->
+                <div class="question">
+                    <label for="sangre">Grupo sanguíneo</label>
+                    <select id="sangre" name="sangre">
+                        <option value="">Escoge una opción</option>
+                        <option value="o+">O+</option>
+                        <option value="o-">O-</option>
+                        <option value="a+">A+</option>
+                        <option value="a-">A-</option>
+                        <option value="b+">B+</option>
+                        <option value="b-">B-</option>
+                        <option value="ab+">AB+</option>
+                        <option value="ab-">AB-</option>
+                        <option value="NS">No lo sé</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="calcularBtn">
+                    Calcular rareza
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- RESULTADO -->
+
+        <section id="resultado" class="resultado oculto">
+
+            <h2>Tu resultado</h2>
+
+            <div class="score">
+                <span id="porcentaje">0%</span>
+            </div>
+
+            <div class="barra">
+                <div id="barraRareza"></div>
+            </div>
+
+            <p id="descripcion"></p>
+
+            <div id="rasgosDestacados"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>RareScore © 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ff6ec7,
+        #6c63ff,
+        #00d4ff
+    );
+
+    color: #333;
+    padding: 20px;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* ===== MAIN ===== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 60vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    text-decoration: none;
+    color: #6c63ff;
+    background: white;
+
+    padding: 15px 30px;
+    border-radius: 15px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+}
+
+.hero-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.trait-card {
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.trait-card:hover {
+    transform: scale(1.05);
+}
+
+/* ===== CÓMO FUNCIONA ===== */
+
+.como-funciona{
+    width: 100%;
+    max-width: 900px;
+
+    margin: 4rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.como-funciona {
+    max-width: 900px;
+    color: white;
+    text-align: center;
+}
+
+.como-funciona h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    padding: 2rem;
+
+    text-align: left;
+
+    line-height: 1.8;
+}
+
+.info-box p {
+    margin-bottom: 1rem;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.gancho {
+    margin-top: 2rem;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    line-height: 1.8;
+}
+
+/* ===== FORMULARIO ===== */
+
+.form-container {
+    width: 100%;
+    max-width: 700px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #6c63ff;
+    margin-bottom: 25px;
+}
+
+/* ===== PREGUNTAS ===== */
+
+.question {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.question label {
+    font-weight: bold;
+    color: #444;
+
+    margin-bottom: 8px;
+}
+
+.question select {
+    padding: 12px;
+
+    border: 2px solid #d8d8d8;
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    transition: 0.3s;
+}
+
+.question select:focus {
+    outline: none;
+
+    border-color: #6c63ff;
+
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+}
+
+/* ===== BOTÓN ===== */
+
+#calcularBtn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ff6ec7,
+        #6c63ff
+    );
+
+    color: white;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#calcularBtn:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 5px 20px rgba(108, 99, 255, 0.4);
+}
+
+/* ===== RESULTADO ===== */
+
+.resultado {
+    width: 100%;
+    max-width: 700px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.resultado h2 {
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+
+/* ===== SCORE ===== */
+
+.score {
+    margin: 20px 0;
+}
+
+#porcentaje {
+    font-size: 4rem;
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #ff6ec7,
+        #6c63ff,
+        #00d4ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== BARRA ===== */
+
+.barra {
+    width: 100%;
+    height: 25px;
+
+    background-color: #ececec;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    margin: 20px 0;
+}
+
+#barraRareza {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #00ff88,
+        #ffee00,
+        #ff8c00,
+        #ff2d55
+    );
+
+    transition: width 1s ease;
+}
+
+/* ===== DESCRIPCIÓN ===== */
+
+#descripcion {
+    margin-top: 20px;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ===== RASGOS ===== */
+
+#rasgosDestacados {
+    margin-top: 20px;
+}
+
+#rasgosDestacados div {
+    background-color: #f5f5ff;
+
+    padding: 10px;
+
+    margin: 10px 0;
+
+    border-radius: 10px;
+}
+
+/* ===== UTILIDADES ===== */
+
+.oculto {
+    display: none;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top: 5rem;
+
+    text-align: center;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    #porcentaje {
+        font-size: 3rem;
+    }
+
+    .como-funciona h2 {
+        font-size: 2rem;
+    }
+}
