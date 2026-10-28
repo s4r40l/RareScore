@@ -136,15 +136,6 @@ header p {
     animation: shine 1.0s ease;
 }
 
-/* ===== MAIN ===== */
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-}
-
 /* ===== CÓMO FUNCIONA ===== */
 
 .como-funciona{
@@ -191,6 +182,11 @@ main {
     line-height: 1.8;
 }
 
+.info-box h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
 .info-box p {
     margin-bottom: 1rem;
 }
@@ -208,25 +204,27 @@ main {
     line-height: 1.8;
 }
 
+/* ===== MAIN ===== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
 /* ===== FORMULARIO ===== */
 
 .form-container {
+
     width: 100%;
     max-width: 700px;
 
     background: white;
-
     padding: 30px;
-
     border-radius: 25px;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
-    transition: 0.3s;
-}
-
-.form-container:hover {
-    transform: translateY(-5px);
 }
 
 .form-container h2 {
