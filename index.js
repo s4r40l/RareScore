@@ -15,9 +15,9 @@ const rarezas = {
     },
 
     pelo: {
-        negro: 79,
-        castano: 11,
-        rubio: 8,
+        negro: 40,
+        castano: 45,
+        rubio: 13,
         pelirrojo: 2
     },
 
