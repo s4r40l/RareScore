@@ -49,9 +49,12 @@ header p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
 
     color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 .hero-text h2 {
@@ -69,7 +72,7 @@ header p {
     display: inline-block;
 
     text-decoration: none;
-    color: #6c63ff;
+    color: #3a3a3b;
     background: white;
 
     padding: 15px 30px;
@@ -81,7 +84,7 @@ header p {
 }
 
 .hero-btn:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .hero-icons {
@@ -91,24 +94,46 @@ header p {
 }
 
 .trait-card {
-    background: rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
 
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
 
     padding: 40px;
-
     border-radius: 20px;
 
     text-align: center;
 
     font-size: 1.4rem;
     font-weight: bold;
+}
 
-    transition: 0.3s;
+.trait-card::before {
+    content: "";
+
+    position: absolute;
+    top: -50%;
+    left: -150%;
+
+    width: 60px;
+    height: 200%;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    transform: rotate(25deg);
+
+    filter: blur(8px);
+
+    pointer-events: none;
 }
 
 .trait-card:hover {
-    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255,255,255,0.15);
+}
+
+.trait-card:hover::before {
+    animation: shine 1.0s ease;
 }
 
 /* ===== MAIN ===== */
@@ -388,6 +413,18 @@ footer {
 
     text-align: center;
     color: white;
+}
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes shine {
+    from {
+        left: -150%;
+    }
+
+    to {
+        left: 150%;
+    }
 }
 
 /* ===== RESPONSIVE ===== */
