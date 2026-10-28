@@ -14,8 +14,8 @@ body {
 
     background: linear-gradient(
         135deg,
-        #ff6ec7,
-        #6c63ff,
+        #ff7467,
+        #4740de,
         #00d4ff
     );
 
@@ -40,20 +40,10 @@ header p {
     font-size: 1.2rem;
 }
 
-/* ===== MAIN ===== */
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-}
-
 /* ===== HERO ===== */
 
 .hero {
     width: 100%;
-    max-width: 1200px;
     min-height: 60vh;
 
     display: grid;
@@ -119,6 +109,15 @@ main {
 
 .trait-card:hover {
     transform: scale(1.05);
+}
+
+/* ===== MAIN ===== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 }
 
 /* ===== CÓMO FUNCIONA ===== */
