@@ -36,7 +36,7 @@ const rarezas = {
 
     hoyuelos: {
         si: 20,
-        no: 80
+        no: 100
     },
 
     sangre: {
@@ -47,8 +47,7 @@ const rarezas = {
         "b+": 9,
         "b-": 2,
         "ab+": 4,
-        "ab-": 1,
-        "NS": 50
+        "ab-": 1
     }
 };
 
@@ -76,17 +75,23 @@ form.addEventListener("submit", (e) => {
 
     let puntuacionTotal = 0;
     let rasgosRaros = [];
+    let rasgosCalculados = 0;
 
     for (const categoria in datos) {
 
         const respuesta = datos[categoria];
-        const frecuencia = rarezas[categoria][respuesta];
 
+        if (categoria === "sangre" && respuesta === "NS") {
+            continue;
+        }
+
+        const frecuencia = rarezas[categoria][respuesta];
         const rareza = 100 - frecuencia;
 
         puntuacionTotal += rareza;
+        rasgosCalculados++;
 
-        if (frecuencia <= 10) {
+        if (frecuencia <= 20) {
             rasgosRaros.push({
                 nombre: obtenerNombreRasgo(categoria, respuesta),
                 frecuencia
@@ -95,26 +100,30 @@ form.addEventListener("submit", (e) => {
     }
 
     let porcentajeFinal = Math.round(
-        puntuacionTotal / Object.keys(datos).length
+        puntuacionTotal / rasgosCalculados
     );
 
-    if (porcentajeFinal > 100) {
-        porcentajeFinal = 100;
-    }
+    porcentajeFinal = Math.max(0, Math.min(100, porcentajeFinal));
 
     mostrarResultado(
         porcentajeFinal,
         rasgosRaros
     );
+
 });
 
-function mostrarResultado(porcentajeRareza, rasgosRaros) {
+function mostrarResultado(
+    porcentajeRareza,
+    rasgosRaros
+) {
 
     resultado.classList.remove("oculto");
 
-    porcentaje.textContent = `${porcentajeRareza}%`;
+    porcentaje.textContent =
+        `${porcentajeRareza}%`;
 
-    barraRareza.style.width = `${porcentajeRareza}%`;
+    barraRareza.style.width =
+        `${porcentajeRareza}%`;
 
     descripcion.textContent =
         obtenerDescripcion(porcentajeRareza);
@@ -157,6 +166,7 @@ function mostrarResultado(porcentajeRareza, rasgosRaros) {
         behavior: "smooth",
         block: "start"
     });
+
 }
 
 function obtenerDescripcion(porcentaje) {
@@ -184,9 +194,13 @@ function obtenerDescripcion(porcentaje) {
     return "💎 ¡Increíble! Eres una auténtica joya genética y tu combinación de rasgos es extremadamente poco frecuente.";
 }
 
-function obtenerNombreRasgo(categoria, valor) {
+function obtenerNombreRasgo(
+    categoria,
+    valor
+) {
 
     const nombres = {
+
         ojos: {
             marrones: "Ojos marrones",
             azules: "Ojos azules",
@@ -216,8 +230,8 @@ function obtenerNombreRasgo(categoria, valor) {
         },
 
         hoyuelos: {
-            si: "Hoyuelos",
-            no: "Sin hoyuelos"
+            si: "Tiene hoyuelos",
+            no: "No tiene hoyuelos"
         },
 
         sangre: {
@@ -228,10 +242,11 @@ function obtenerNombreRasgo(categoria, valor) {
             "b+": "Grupo B+",
             "b-": "Grupo B-",
             "ab+": "Grupo AB+",
-            "ab-": "Grupo AB-",
-            "NS": "Grupo sanguíneo desconocido"
+            "ab-": "Grupo AB-"
         }
+
     };
 
     return nombres[categoria][valor];
+
 }
